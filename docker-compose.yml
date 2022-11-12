@@ -13,7 +13,7 @@ services:
   app:
     container_name: app
     entrypoint: dockerize -wait tcp://db:3306 -timeout 40s docker-entrypoint.sh
-    command: npm start
+    command: sh -c "npm i && npm start"
     build:
       context: ./node
     networks:
